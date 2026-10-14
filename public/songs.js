@@ -9,13 +9,13 @@
  * নতুন গান যোগ করতে: ফাইলটি public/audio/ এ রাখুন এবং নিচে নামটি যোগ করুন।
  */
 window.SONG_FILES = [
-  "Buje_na_se_buje_na.ogg",
-  "ekta_chilo_sonar_konna.ogg",
-  "modhu_maloti_.ogg",
-  "Pora_mone_valobasa.ogg",
-  "Sona_kinilam_naki_rupa_kinilam.ogg",
-  "sonar_o_palongker_ghore.ogg",
-  "Behula.ogg",
-  "Takiya_asmaner_dike.ogg",
-  "Duhater_mutho_vore.ogg",
+"Behula.ogg",
+"Buje_na_se_buje_na.ogg",
+"Duhater_mutho_vore.ogg",
+"Pora_mone_valobasa.ogg",
+"Sona_kinilam_naki_rupa_kinilam.ogg",
+"Takiya_asmaner_dike.ogg",
+"ekta_chilo_sonar_konna.ogg",
+"modhu_maloti_.ogg",
+"sonar_o_palongker_ghore.ogg"
 ];
