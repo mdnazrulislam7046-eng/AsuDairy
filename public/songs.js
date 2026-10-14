@@ -12,7 +12,7 @@ window.SONG_FILES = [
 "Behula.ogg",
 "Buje_na_se_buje_na.ogg",
 "Duhater_mutho_vore.ogg",
-"Pora_mone_valobasa.ogg",
+"Nagor.ogg",
 "Sona_kinilam_naki_rupa_kinilam.ogg",
 "Takiya_asmaner_dike.ogg",
 "ekta_chilo_sonar_konna.ogg",
