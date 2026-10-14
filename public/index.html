@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Singer Aysha — Voice Recorded Songs</title>
+  <meta name="author" content="Sufu" />
+  <meta name="description" content="Singer Aysha — voice recorded songs. গান শুনতে Play চাপুন।" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='7' fill='%23111'/%3E%3Cpath d='M12 6a2.5 2.5 0 0 1 2.5 2.5v3a2.5 2.5 0 0 1-5 0v-3A2.5 2.5 0 0 1 12 6zM8 11.5a4 4 0 0 0 8 0M12 15.5V18' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Apply saved theme before first paint (no flash)
+    try { var t = localStorage.getItem("theme"); if (t === "midnight" || t === "ocean") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <div class="corner credit" aria-label="Made by Sufu">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 5 6.2 5c2 0 3.4 1 4.3 2.4h3C14.4 6 15.8 5 17.8 5 21 5 23.1 8.3 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+    <span>Made by <b>Sufu</b></span>
+  </div>
+
+  <div class="corner themes" role="group" aria-label="থিম বদলান">
+    <button class="theme-dot" type="button" data-theme="rose" aria-label="Rose theme" title="Rose" aria-pressed="true"></button>
+    <button class="theme-dot" type="button" data-theme="midnight" aria-label="Midnight theme" title="Midnight" aria-pressed="false"></button>
+    <button class="theme-dot" type="button" data-theme="ocean" aria-label="Ocean theme" title="Ocean" aria-pressed="false"></button>
+  </div>
+
+  <main class="page">
+    <header class="hero">
+      <div class="disc-wrap" aria-hidden="true">
+        <div class="disc" id="disc">
+          <div class="disc-grooves"></div>
+          <div class="disc-label">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>
+          </div>
+        </div>
+        <div class="wave" id="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <span class="badge">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>
+        Voice Recorded Songs
+      </span>
+      <h1>Singer <em>Aysha</em></h1>
+      <p class="hero-sub" id="countText">গান লোড হচ্ছে…</p>
+
+      <button class="play-all" id="playAll" type="button">
+        <svg class="pa-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="pa-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+        <span id="playAllText">সব গান শুনুন</span>
+      </button>
+    </header>
+
+    <h2 class="section-title"><span>Songs</span></h2>
+    <ol class="song-list" id="songList" aria-label="গানের তালিকা"></ol>
+    <p class="notice" id="notice" role="status" aria-live="polite" hidden></p>
+  </main>
+
+  <footer class="player" id="player" aria-label="মিউজিক প্লেয়ার">
+    <div class="player-inner">
+      <div class="now">
+        <span class="now-icon" id="nowIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+        </span>
+        <div class="now-text">
+          <div class="now-title" id="nowTitle">একটি গান বেছে নিন</div>
+          <div class="now-sub" id="nowSub">Play চাপলেই গান শুরু হবে</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="buttons">
+          <button class="ctrl" id="prevBtn" type="button" aria-label="আগের গান" title="আগের গান">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>
+          </button>
+          <button class="ctrl ctrl-main" id="playBtn" type="button" aria-label="Play" title="Play / Pause">
+            <svg class="i-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          </button>
+          <button class="ctrl" id="nextBtn" type="button" aria-label="পরের গান" title="পরের গান">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 5h2v14h-2zM4 5l10.5 7L4 19z"/></svg>
+          </button>
+        </div>
+        <div class="progress-row">
+          <span class="time" id="curTime">0:00</span>
+          <input class="range" id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="গানের অগ্রগতি" disabled />
+          <span class="time" id="totTime">0:00</span>
+        </div>
+      </div>
+
+      <div class="volume">
+        <button class="ctrl" id="muteBtn" type="button" aria-label="মিউট" title="মিউট / আনমিউট">
+          <svg class="i-vol" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+          <svg class="i-mute" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z" fill="currentColor"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+        </button>
+        <input class="range" id="volume" type="range" min="0" max="100" value="80" step="1" aria-label="ভলিউম" />
+      </div>
+    </div>
+  </footer>
+
+  <script src="songs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
